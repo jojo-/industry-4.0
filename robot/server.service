@@ -1,0 +1,13 @@
+[Unit]
+Description=Server Robot
+After=network.target dhcpcd5.service
+
+[Service]
+Type=simple
+ExecStart=/home/pi/robot/server.py
+Restart=always
+Nice=5
+RestartSec=10sec
+
+[Install]
+WantedBy=multi-user.target
